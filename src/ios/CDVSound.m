@@ -227,7 +227,7 @@
     NSString* mediaId = [command argumentAtIndex:0];
     NSString* resourcePath = [command argumentAtIndex:1];
     NSDictionary* options = [command argumentAtIndex:2 withDefault:nil];
-    BOOL* automaticallyWaitsToMinimizeStalling = [options objectForKey:@"automaticallyWaitsToMinimizeStalling"];
+    BOOL automaticallyWaitsToMinimizeStalling = [options objectForKey:@"automaticallyWaitsToMinimizeStalling"];
 
     CDVAudioFile* audioFile = [self audioFileForResource:resourcePath withId:mediaId doValidation:YES forRecording:NO suppressValidationErrors:YES];
 
