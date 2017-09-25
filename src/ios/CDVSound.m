@@ -226,8 +226,8 @@
 {
     NSString* mediaId = [command argumentAtIndex:0];
     NSString* resourcePath = [command argumentAtIndex:1];
-    NSString* something = [command argumentAtIndex:2];
-    NSLog(@"", something);
+    NSDictionary* options = [command argumentAtIndex:5 withDefault:nil];
+    BOOL* automaticallyWaitsToMinimizeStalling = [options objectForKey:@"automaticallyWaitsToMinimizeStalling"];
 
     CDVAudioFile* audioFile = [self audioFileForResource:resourcePath withId:mediaId doValidation:YES forRecording:NO suppressValidationErrors:YES];
 
@@ -250,7 +250,7 @@
 
             // Pass the AVPlayerItem to a new player
             avPlayer = [[AVPlayer alloc] initWithPlayerItem:playerItem];
-            avPlayer.automaticallyWaitsToMinimizeStalling = false;
+            avPlayer.automaticallyWaitsToMinimizeStalling = automaticallyWaitsToMinimizeStalling;
 
             //avPlayer = [[AVPlayer alloc] initWithURL:resourceUrl];
         }
