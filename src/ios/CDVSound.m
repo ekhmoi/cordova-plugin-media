@@ -226,6 +226,8 @@
 {
     NSString* mediaId = [command argumentAtIndex:0];
     NSString* resourcePath = [command argumentAtIndex:1];
+    NSString* something = [command argumentAtIndex:2];
+    NSLog(@"", something);
 
     CDVAudioFile* audioFile = [self audioFileForResource:resourcePath withId:mediaId doValidation:YES forRecording:NO suppressValidationErrors:YES];
 
